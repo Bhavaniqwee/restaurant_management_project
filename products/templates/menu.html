@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Restaurant Menu</title>
+        <style>
+            body{
+            font-family:Arial,sans-serif;
+            margin:40px;
+            background:#f9f9f9;
+            }
+            h1{
+            color:#333;
+            }
+            .menu-item{
+            background:white;
+            padding:15px;
+            margin-bottom:8px;
+            border-radius:8px;
+            box-shadow:0 2px 5px egba(0,0,0,0,1);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Restaurant Menu</h1>
+        {% for item in menu %}
+            <div class='menu-item'>
+                <h2>{{item.name}}</h2>
+                <p>{{item.description}}</p>
+                <p class='price'>${{item.price}}</p>
+            </div>
+        {% endfor %}
+    </body>
+</html>
