@@ -1,12 +1,13 @@
 from django.db import models
-
+from django.contrib.auth.models import User
+from .models import MenuItem
 # Create your models here.
 class Order(models.Model):
     STATUS_CHOICES=[
-        ('pending':'pending'),
-        ('processing':'processing'),
-        ('completed':'completed'),
-        ('cancelled':'cancelled'),
+        ('pending':'Pending'),
+        ('processing':'Processing'),
+        ('completed':'Completed'),
+        ('cancelled':'Cancelled'),
     ]
     customer=models.ForeignKey(User,on_delete=models.CASCADE),
     order_items=models.ManyToManyField(MenuItem),
