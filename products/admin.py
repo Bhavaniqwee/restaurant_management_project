@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import MenuItem,Order
+from .models import MenuItem
 
 
 # Custom Admins
