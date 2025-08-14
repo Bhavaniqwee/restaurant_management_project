@@ -5,7 +5,7 @@ from rest_framework import status
 
 from .models import Item
 from .serializers import ItemSerializer
-
+import requests
 '''
 NOTE: Conside this as a reference and follow this same coding structure or format to work on you tasks
 '''
@@ -45,3 +45,8 @@ class MenuAPIView(APIView):
             }
         ]
         return Response(menu)
+
+def menu_homepage(request):
+    response=requests.get('http://127.0.0.1:8000/api/menu/')
+    menu_data=response.json() if response.status_code==200 else []
+    return render(request,'menu.html',{'menu':menu_data})
